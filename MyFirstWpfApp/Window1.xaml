@@ -1,0 +1,17 @@
+<!--Root Element, 'Class' attribute contains the name of the class whose one portion is 
+represented by 'Window' element.-->
+<Window
+	x:Class="MyFirstWpfApp.Window1"
+	xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+	xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+	Title="Hello, WPF">
+	
+	<Button 
+		x:Name="button" 
+		Width="200"
+		Height="25" 
+		Click="button_Click">
+		Click me, baby, one more time!
+	</Button>
+	
+</Window>
