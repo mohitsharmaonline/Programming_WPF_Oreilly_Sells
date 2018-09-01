@@ -20,10 +20,8 @@ namespace MyFirstWpfApp
 		
 		void AppStartup(object sender, StartupEventArgs e)
 		{
-			// By default, when all top level windows are
-			// closed, the app shuts down
-			Window window = new Window();
-			window.Title = "Hello, WPF";
+			// Let the Window1 initialize itself
+			Window window = new Window1();
 			window.Show();
 		}
 	}

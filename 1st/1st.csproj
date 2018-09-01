@@ -8,6 +8,7 @@
 	</PropertyGroup>
 	<ItemGroup>
 		<Compile Include="MyApp.cs" />
+		<Compile Include="Window1.cs" />
 		<Reference Include="System" />
 		<Reference Include="WindowsBase" />
 		<Reference Include="PresentationCore" />
