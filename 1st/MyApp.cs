@@ -3,7 +3,7 @@ using System.Windows; // The root WPF namespace.
 
 namespace MyFirstWpfApp
 {
-	class MyApp
+	class MyApp : Application
 	{
 		/*******************************************************************************
 		* STAThread attribute signals .net to make sure that when COM is initilized
@@ -13,9 +13,18 @@ namespace MyFirstWpfApp
 		[STAThread]
 		static void Main()
 		{
-			// The WPF message box
-			MessageBox.Show("Hello, WPF");  // it's actually an interop call to Win32
-			// Proceed to rtf dicument named MyApp to see how it gets compiled.
+			MyApp app = new MyApp();
+			app.Startup += app.AppStartup;
+			app.Run();
+		}
+		
+		void AppStartup(object sender, StartupEventArgs e)
+		{
+			// By default, when all top level windows are
+			// closed, the app shuts down
+			Window window = new Window();
+			window.Title = "Hello, WPF";
+			window.Show();
 		}
 	}
 }
