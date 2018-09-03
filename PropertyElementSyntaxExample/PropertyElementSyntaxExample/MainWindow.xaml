@@ -12,7 +12,14 @@
     we call it as property element syntax.-->
     <Grid>
         <Button Width="100" Height="100">
+            <!--Many Content Controls does not 
+            support more than one Content.
+            For supporting more than One controls in a
+            content slot, or for richer layouts
+            Panels will come handy.-->
+            <!--WARNING: this won't work.-->
             <Button.Content>
+                <TextBlock>Tom: </TextBlock>
                 <Image Source="Tom_cat.png"/>
             </Button.Content>
         </Button>
