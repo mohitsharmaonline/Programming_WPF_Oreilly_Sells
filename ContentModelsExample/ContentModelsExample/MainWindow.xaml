@@ -6,9 +6,19 @@
         xmlns:local="clr-namespace:ContentModelsExample"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <!--
+    Why Button can take any kind of content?
+    Because it is derived from ContentControl, Hence it has a property
+    named 'Content' which can take any kind of object in it.
+    Label, ListBoxItem, ToolTip, CheckBox, RadioButton, Window are 
+    examples of controls derived from it.
+    HeaderedContentControl is just like Content Control with two spots 
+    for Contents: one in Header and other in body, GroupBox and TabItem
+    are the examples of HeaderedContentControl.
+    -->
     <Grid>
-        <Button Width="160" Height="300">
-            <Image Source="Tom_cat.png"/>
+        <Button Width="100" Height="100">
+            <TextBox Width="75">edit me</TextBox>
         </Button>
     </Grid>
 </Window>
