@@ -6,6 +6,35 @@
         xmlns:local="clr-namespace:LayoutExample"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <!--
+    Panel: Control that knows how to arrange its contents.
+    WPF Comes with following panel Controls:
+    1) Canvas
+    2) Dockpanel
+    3) Grid
+    4) StackPanel
+    5) UniformGrid
+    6) WrapPanel
+    
+    Canvas: Arranges content by position and size with 
+    no automatic rearrangements when the canvas is resized.
+    
+    DockPanel: Arranges content according to the edge that each piece
+    of content docks to, except the last which fills the remaining
+    area.
+    
+    Grid: Arranges content in rows and columns as specified by the
+    developer.
+    
+    StackPanel: Ararnges content top to bottom or left to right 
+    according to the orientation of the panel.
+    
+    UniformGrid: Arranges content in a grid with the same number 
+    of rows and columns generated as needed to display the content.
+    
+    WrapPanel: Arranges things in a horizontal row until the
+    next item won't fit, in which case it wraps to the next row.
+    -->
     <Grid>
         
     </Grid>
