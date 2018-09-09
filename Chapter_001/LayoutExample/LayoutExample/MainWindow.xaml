@@ -36,6 +36,27 @@
     next item won't fit, in which case it wraps to the next row.
     -->
     <Grid>
-        
+        <!--Property Element Syntax-->
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Button Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2">
+            A
+        </Button>
+        <Button Grid.Row="0" Grid.Column="2">C</Button>
+        <Button Grid.Row="1" Grid.Column="0" Grid.RowSpan="2">
+            D
+        </Button>
+        <Button Grid.Row="1" Grid.Column="1">E</Button>
+        <Button Grid.Row="1" Grid.Column="2">F</Button>
+        <Button Grid.Row="2" Grid.Column="1">H</Button>
+        <Button Grid.Row="2" Grid.Column="2">I</Button>
     </Grid>
 </Window>
