@@ -6,7 +6,21 @@
         xmlns:local="clr-namespace:DAtaBindingExample"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
-    </Grid>
+    <DockPanel>
+        <TextBlock DockPanel.Dock="Top">
+            <TextBlock VerticalAlignment="Center">
+                Name: 
+            </TextBlock>
+            <TextBox Text="Binding space"/>
+            <TextBlock VerticalAlignment="Center">
+                Nick: 
+            </TextBlock>
+            <TextBox Text="Binding space"/>
+        </TextBlock>
+        <Button DockPanel.Dock="Bottom" x:Name="addButton">
+            Add
+        </Button>
+        <ListBox ItemsSource="{Binding}"
+                 IsSynchronizedWithCurrentItem="True"/>
+    </DockPanel>
 </Window>
