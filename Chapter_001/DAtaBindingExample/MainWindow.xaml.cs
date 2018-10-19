@@ -8,9 +8,22 @@ namespace DAtaBindingExample
     /// </summary>
     public partial class MainWindow : Window
     {
+        private NickNames names;
         public MainWindow()
         {
             InitializeComponent();
+
+            this.addButton.Click += AddButton_Click;
+
+            this.names = new NickNames();
+
+            // Make data available for binding
+            dockPanel.DataContext = this.names;
+        }
+
+        private void AddButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.names.Add(new NickName());
         }
     }
 }

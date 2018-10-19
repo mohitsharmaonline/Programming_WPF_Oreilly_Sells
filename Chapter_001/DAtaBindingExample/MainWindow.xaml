@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:DAtaBindingExample"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <DockPanel>
+    <DockPanel x:Name="dockPanel">
         <TextBlock DockPanel.Dock="Top">
             <TextBlock VerticalAlignment="Center">
                 Name: 
