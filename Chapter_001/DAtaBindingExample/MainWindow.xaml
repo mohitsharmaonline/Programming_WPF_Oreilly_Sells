@@ -7,16 +7,21 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel x:Name="dockPanel">
-        <TextBlock DockPanel.Dock="Top">
+        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
             <TextBlock VerticalAlignment="Center">
                 Name: 
             </TextBlock>
-            <TextBox Text="Binding space"/>
+            <!--XAML Markup Extension syntax
+            Text="{Binding Path=Name}" actually means
+            <TextBox.Text>
+                <Binding Path="Name" />
+            </TextBox.Text>-->
+            <TextBox Text="{Binding Path=Name, Mode=TwoWay}"/>
             <TextBlock VerticalAlignment="Center">
                 Nick: 
             </TextBlock>
-            <TextBox Text="Binding space"/>
-        </TextBlock>
+            <TextBox Text="{Binding Path=Nick, Mode=TwoWay}"/>
+        </StackPanel>
         <Button DockPanel.Dock="Bottom" x:Name="addButton">
             Add
         </Button>
