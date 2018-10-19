@@ -3,6 +3,8 @@ using System.ComponentModel;
 
 namespace DAtaBindingExample
 {
+    // This class lets the consumers of it's data know when it has changed.
+    // INotifyPropertyChanged: Standard way of notifying consumers of object when they change.
     public class NickName : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
