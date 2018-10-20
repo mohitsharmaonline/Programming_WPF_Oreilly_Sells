@@ -26,6 +26,21 @@
             Add
         </Button>
         <ListBox ItemsSource="{Binding}"
-                 IsSynchronizedWithCurrentItem="True"/>
+                 IsSynchronizedWithCurrentItem="True">
+            <!--Data Template: Set of elements that should 
+            be inserted somewhere.
+            
+            We are specifying a data template to be inserted for
+            each listbox item by setting the ItemTemplate property.-->
+            <!--Property Element syntax-->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding Nick}"/>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
     </DockPanel>
 </Window>
