@@ -23,7 +23,7 @@ namespace DAtaBindingExample
 
         private void AddButton_Click(object sender, RoutedEventArgs e)
         {
-            this.names.Add(new NickName());
+            this.names.Add(new NickName(name: textBoxName.Text, nick: textBoxNick.Text));
         }
     }
 }

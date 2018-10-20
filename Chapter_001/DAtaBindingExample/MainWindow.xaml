@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <DockPanel x:Name="dockPanel">
-        <StackPanel DockPanel.Dock="Top" Orientation="Horizontal">
+        <TextBlock DockPanel.Dock="Top">
             <TextBlock VerticalAlignment="Center">
                 Name: 
             </TextBlock>
@@ -16,12 +16,12 @@
             <TextBox.Text>
                 <Binding Path="Name" />
             </TextBox.Text>-->
-            <TextBox Text="{Binding Path=Name, Mode=TwoWay}"/>
+            <TextBox x:Name="textBoxName" Text="{Binding Path=Name, Mode=TwoWay}"/>
             <TextBlock VerticalAlignment="Center">
                 Nick: 
             </TextBlock>
-            <TextBox Text="{Binding Path=Nick, Mode=TwoWay}"/>
-        </StackPanel>
+            <TextBox x:Name="textBoxNick" Text="{Binding Path=Nick, Mode=TwoWay}"/>
+        </TextBlock>
         <Button DockPanel.Dock="Bottom" x:Name="addButton">
             Add
         </Button>
