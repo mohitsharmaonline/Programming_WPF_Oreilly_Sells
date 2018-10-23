@@ -9,8 +9,16 @@
     <!-- Property Element Syntax: sets the resources property
     of Window class.
     both NickNames and NickName class have default constructor.-->
+    
+    <!-- The Mapping Syntax: Provides the ability to bring in types not
+    already known by the xaml compiler.
+    Example:
+    xmlns:local="clr-namespace:DAtaBindingExample"
+    -->
     <Window.Resources>
+        <!-- Mapping Syntax -->
         <local:NickNames x:Key="names">
+            <!-- Mapping Syntax -->
             <local:NickName Name="Don" Nick="Naked" />
             <local:NickName Name="Martin" Nick="Gudge" />
             <local:NickName Name="Tim" Nick="Stinky" />
