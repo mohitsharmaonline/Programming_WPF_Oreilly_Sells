@@ -6,9 +6,19 @@
         xmlns:local="clr-namespace:DAtaBindingExample"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
+    <Window.Resources>
+        <Style x:Key="myStyle" TargetType="{x:Type TextBlock}">
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="Margin" Value="2" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="FontStyle" Value="Italic"/>
+        </Style>
+    </Window.Resources>
+    <!-- Styles: Set of Property/value pairs to be applied to one
+    or more elements. -->
     <DockPanel x:Name="dockPanel">
         <TextBlock DockPanel.Dock="Top">
-            <TextBlock VerticalAlignment="Center">
+            <TextBlock Style="{StaticResource myStyle}">
                 Name: 
             </TextBlock>
             <!--XAML Markup Extension syntax
@@ -17,10 +27,11 @@
                 <Binding Path="Name" />
             </TextBox.Text>-->
             <TextBox x:Name="textBoxName" Text="{Binding Path=Name, Mode=TwoWay}"/>
-            <TextBlock VerticalAlignment="Center">
+            <TextBlock Style="{StaticResource myStyle}">
                 Nick: 
             </TextBlock>
-            <TextBox x:Name="textBoxNick" Text="{Binding Path=Nick, Mode=TwoWay}"/>
+            <TextBox x:Name="textBoxNick"
+                     Text="{Binding Path=Nick, Mode=TwoWay}"/>
         </TextBlock>
         <Button DockPanel.Dock="Bottom" x:Name="addButton">
             Add
