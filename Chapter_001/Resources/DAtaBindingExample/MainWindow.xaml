@@ -1,0 +1,46 @@
+﻿<Window x:Class="DAtaBindingExample.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DAtaBindingExample"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <DockPanel x:Name="dockPanel">
+        <TextBlock DockPanel.Dock="Top">
+            <TextBlock VerticalAlignment="Center">
+                Name: 
+            </TextBlock>
+            <!--XAML Markup Extension syntax
+            Text="{Binding Path=Name}" actually means
+            <TextBox.Text>
+                <Binding Path="Name" />
+            </TextBox.Text>-->
+            <TextBox x:Name="textBoxName" Text="{Binding Path=Name, Mode=TwoWay}"/>
+            <TextBlock VerticalAlignment="Center">
+                Nick: 
+            </TextBlock>
+            <TextBox x:Name="textBoxNick" Text="{Binding Path=Nick, Mode=TwoWay}"/>
+        </TextBlock>
+        <Button DockPanel.Dock="Bottom" x:Name="addButton">
+            Add
+        </Button>
+        <ListBox ItemsSource="{Binding}"
+                 IsSynchronizedWithCurrentItem="True">
+            <!--Data Template: Set of elements that should 
+            be inserted somewhere.
+            
+            We are specifying a data template to be inserted for
+            each listbox item by setting the ItemTemplate property.-->
+            <!--Property Element syntax-->
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock>
+                        <TextBlock Text="{Binding Name}"/>
+                        <TextBlock Text="{Binding Nick}"/>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+        </ListBox>
+    </DockPanel>
+</Window>
