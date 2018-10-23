@@ -15,10 +15,10 @@ namespace DAtaBindingExample
 
             this.addButton.Click += AddButton_Click;
 
-            this.names = new NickNames();
+            this.names = (NickNames)this.FindResource("names");
 
-            // Make data available for binding
-            dockPanel.DataContext = this.names;
+            //// Make data available for binding
+            //dockPanel.DataContext = this.names;
         }
 
         private void AddButton_Click(object sender, RoutedEventArgs e)

@@ -6,16 +6,22 @@
         xmlns:local="clr-namespace:DAtaBindingExample"
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
-    <DockPanel x:Name="dockPanel">
+    <!-- Property Element Syntax: sets the resources property
+    of Window class.
+    both NickNames and NickName class have default constructor.-->
+    <Window.Resources>
+        <local:NickNames x:Key="names">
+            <local:NickName Name="Don" Nick="Naked" />
+            <local:NickName Name="Martin" Nick="Gudge" />
+            <local:NickName Name="Tim" Nick="Stinky" />
+        </local:NickNames>
+    </Window.Resources>
+
+    <DockPanel DataContext="{StaticResource names}">
         <TextBlock DockPanel.Dock="Top">
             <TextBlock VerticalAlignment="Center">
                 Name: 
             </TextBlock>
-            <!--XAML Markup Extension syntax
-            Text="{Binding Path=Name}" actually means
-            <TextBox.Text>
-                <Binding Path="Name" />
-            </TextBox.Text>-->
             <TextBox x:Name="textBoxName" Text="{Binding Path=Name, Mode=TwoWay}"/>
             <TextBlock VerticalAlignment="Center">
                 Nick: 
@@ -27,12 +33,6 @@
         </Button>
         <ListBox ItemsSource="{Binding}"
                  IsSynchronizedWithCurrentItem="True">
-            <!--Data Template: Set of elements that should 
-            be inserted somewhere.
-            
-            We are specifying a data template to be inserted for
-            each listbox item by setting the ItemTemplate property.-->
-            <!--Property Element syntax-->
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock>
@@ -42,5 +42,5 @@
                 </DataTemplate>
             </ListBox.ItemTemplate>
         </ListBox>
-    </DockPanel>
+    </DockPanel>    
 </Window>
