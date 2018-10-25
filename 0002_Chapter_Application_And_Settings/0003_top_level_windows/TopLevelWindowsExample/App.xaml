@@ -1,4 +1,6 @@
-﻿<Application x:Class="TopLevelWindowsExample.App"
+﻿<!-- Top Level Window: a window that is not contained within or owned by another window.
+    ApplicationObjects's MainWindow property contains reference to top level window.-->
+    <Application x:Class="TopLevelWindowsExample.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:local="clr-namespace:TopLevelWindowsExample"
