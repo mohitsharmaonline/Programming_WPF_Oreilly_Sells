@@ -8,18 +8,16 @@
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
             <RowDefinition/>
-            <RowDefinition/>            
+            <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition/>
-            <ColumnDefinition/>
-        </Grid.ColumnDefinitions>
-        <TextBlock Grid.Row="0" Grid.Column="0">
-            Application.Window
-        </TextBlock>
-        <TextBlock Grid.Row="0" Grid.Column="1" x:Name="Content1">
-            
-        </TextBlock>
+        <Menu>
+            <!-- MenuItem is a HeaderedItemControl, Header will store the name
+            while subcontent will hold the list of menuitems.-->
+            <MenuItem Header="Window" x:Name="WindowMenu">
+                <MenuItem Header="Dummy Item"/>
+            </MenuItem>
+        </Menu>
     </Grid>
 </Window>

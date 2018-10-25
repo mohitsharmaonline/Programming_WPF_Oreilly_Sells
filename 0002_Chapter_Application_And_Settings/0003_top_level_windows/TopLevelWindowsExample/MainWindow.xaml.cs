@@ -23,9 +23,9 @@ namespace TopLevelWindowsExample
         public MainWindow()
         {
             InitializeComponent();
-            Content1.Text = Application.Current.MainWindow.ToString();
+            //Content1.Text = Application.Current.MainWindow.ToString();
             // Application object's 'Windows' property contais list of all top level Windows.
-            var windows = Application.Current.Windows;
+            //var windows = Application.Current.Windows;
         }
     }
 }
