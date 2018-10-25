@@ -33,8 +33,22 @@
             <TextBox x:Name="textBoxNick"
                      Text="{Binding Path=Nick, Mode=TwoWay}"/>
         </TextBlock>
-        <Button DockPanel.Dock="Bottom" x:Name="addButton">
-            Add
+        <!-- We can relace the Contol's UI completely by setting 
+        it's Control Template.
+        Template of control in WPF defines the look, 
+        Code defines the behaviour. -->
+        <Button DockPanel.Dock="Bottom" x:Name="addButton" Content="Add">
+            <Button.Template>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Ellipse Width="128" Height="32" Fill="Yellow"
+                                 Stroke="Black"/>
+                        <ContentPresenter 
+                            VerticalAlignment="Center"
+                            HorizontalAlignment="Center"/>
+                    </Grid>
+                </ControlTemplate>
+            </Button.Template>
         </Button>
         <ListBox ItemsSource="{Binding}"
                  IsSynchronizedWithCurrentItem="True">
