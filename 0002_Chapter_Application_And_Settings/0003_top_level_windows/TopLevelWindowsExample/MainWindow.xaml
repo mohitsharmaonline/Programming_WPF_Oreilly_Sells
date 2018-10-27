@@ -19,5 +19,6 @@
                 <MenuItem Header="Dummy Item"/>
             </MenuItem>
         </Menu>
+        <Button Grid.Row="2" ButtonBase.Click="Button_Click">Add Window</Button>
     </Grid>
 </Window>

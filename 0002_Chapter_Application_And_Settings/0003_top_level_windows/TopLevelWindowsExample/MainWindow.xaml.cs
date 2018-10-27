@@ -26,6 +26,35 @@ namespace TopLevelWindowsExample
             //Content1.Text = Application.Current.MainWindow.ToString();
             // Application object's 'Windows' property contais list of all top level Windows.
             //var windows = Application.Current.Windows;
+            WindowMenu.SubmenuOpened += WindowMenu_SubmenuOpened;
+        }
+
+        // To populate the Windows menu
+        private void WindowMenu_SubmenuOpened(object sender, RoutedEventArgs e)
+        {
+            WindowMenu.Items.Clear();
+            foreach (Window window in Application.Current.Windows)
+            {
+                MenuItem item = new MenuItem();
+                item.Header = window.Title;
+                item.Click += windowMenuItem_Click;
+                item.Tag = window;
+                item.IsChecked = window.IsActive;
+                WindowMenu.Items.Add(item);
+            }
+        }
+
+        private void windowMenuItem_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = (Window)((MenuItem)sender).Tag;
+            window.Activate();
+        }
+
+        private void Button_Click(object sender, RoutedEventArgs e)
+        {
+            Window window = new Window();
+            window.Title = "New Window";
+            window.Show();
         }
     }
 }
